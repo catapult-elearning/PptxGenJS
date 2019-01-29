@@ -4206,6 +4206,10 @@ var PptxGenJS = function(){
 						paragraphPropXml += ' marL="'+ (textObj.options.indentLevel && textObj.options.indentLevel > 0 ? bulletLvl0Margin+(bulletLvl0Margin*textObj.options.indentLevel) : bulletLvl0Margin) +'" indent="-'+bulletLvl0Margin+'"';
 						strXmlBullet = '<a:buSzPct val="100000"/><a:buFont typeface="+mj-lt"/><a:buAutoNum type="arabicPeriod"/>';
 					}
+          if ( textObj.options.bullet.type.toString() == "alphaLcPeriod" ) {
+						paragraphPropXml += ' marL="'+ (textObj.options.indentLevel && textObj.options.indentLevel > 0 ? bulletLvl0Margin+(bulletLvl0Margin*textObj.options.indentLevel) : bulletLvl0Margin) +'" indent="-'+bulletLvl0Margin+'"';
+						strXmlBullet = '<a:buSzPct val="100000"/><a:buFont typeface="+mj-lt"/><a:buAutoNum type="alphaLcPeriod"/>';
+					}
 				}
 				else if ( textObj.options.bullet.code ) {
 					var bulletCode = '&#x'+ textObj.options.bullet.code +';';
